@@ -1,0 +1,54 @@
+@import 'variables';
+
+.container {
+  background: $white;
+}
+
+.mentor-list__title {
+  @include title;
+  font-size: 54px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+  position: relative;
+
+  &::before {
+    content: '';
+    height: 1px;
+    width: 170px;
+    background-color: $green;
+    position: absolute;
+    bottom: -40px;
+  }
+}
+
+.mentor-list__btn {
+  width: fit-content;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: $fuschia100;
+  color: #FFF;
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  &:hover{
+      @include btn-shadow;
+      transform: scale(1.1, 1.1);
+  }
+}
+
+.rows {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 45px;
+}
+
+::ng-deep .mat-progress-spinner {
+  margin: auto;
+  
+  circle {
+    stroke: $fuschia100;
+  }
+} 

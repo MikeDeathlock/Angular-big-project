@@ -1,0 +1,100 @@
+<div class="content" *ngIf="isAuth">
+  <div class="mentor-wrapper">
+    <div *ngIf="!isMentorForm && auth.isMentor">
+      <div *ngIf="mentor; else spinner">
+        <app-main-section [mentor]="mentor"></app-main-section>
+
+        <button class="edit-btn" (click)="showMentorForm()">Edit</button>
+      </div>
+
+      <ng-template #spinner>
+        <mat-spinner></mat-spinner>
+      </ng-template>
+    </div>
+      
+    <div *ngIf="isMentorForm || auth.isMentee">
+      <div class="mentor-account__top-line">
+        <h2 class="mentor-account__title">{{ "HEADER.MENU.ACCOUNT" | translate }}</h2>
+
+        <div class="mentor-account__top-actions">
+          <div class="mentor-account__slide" *ngIf="auth.isMentor">
+            <mat-slide-toggle 
+              (toggleChange)="toggleAccountActivate()" 
+              [checked]="isAccountActivated"
+              [labelPosition]="'before'"
+              >Account activated
+            </mat-slide-toggle>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="mentor-account__avatar-upload">
+        <div class="mentor-account__avatar-wrapper">
+          <div class="mentor-account__avatar-section">
+            <span id="output" class="thumb"><img [src]="croppedImage" alt="avatar"/></span>
+          </div>
+
+          <div class="mentor-account__submit-section">
+            <button type="button" (click)="fileInput.click()" class="edit-small-btn upper">
+              <span class="material-icons"> edit </span>
+            </button>
+
+            <button type="button" (click)="deleteAvatar()" class="edit-small-btn lower">
+              <span class="material-icons"> delete </span>
+            </button>
+          </div>
+        </div>
+
+        <div class="mentor-account__upload-section">
+          <input type="file" (change)="onFileSelected($event)" #fileInput>
+
+          <div class="mentor-account__field-upload"> 
+            <ng-template #justText>
+              <p class="infoBlock"> {{textFieldUpload}}</p>
+            </ng-template>
+          </div>
+        </div>
+        <div  *ngIf="isImage; then imgCrop else justText" class="cropperPlace"></div>
+
+        <ng-template #imgCrop>
+          <div class="mentor-account__cropper-inside">
+            <image-cropper
+              [imageChangedEvent]="imageChangedEvent"
+              [maintainAspectRatio]="true"
+              [aspectRatio]="1 / 1"
+              [resizeToWidth]=120
+              [cropperMinWidth]=120
+              [roundCropper]=true
+              format="png"
+              (imageCropped)="imageCropped($event)"
+            ></image-cropper>
+            <button (click)="imgReady()">OK</button>
+          </div>
+        </ng-template>
+
+        <div class="file-upload">
+          <button mat-mini-fab color="primary" class="upload-btn" (click)="onUpload()" [disabled]="isBtnDisabled">
+            Save
+          </button>
+        </div>
+      </div>
+      
+
+      <div [ngSwitch]="true">
+        <div class="mentor" *ngSwitchCase="auth.isMentor">
+          <app-account-mentor
+            [mentor]="mentor"
+            (setMentorData)="setMentorData($event)"
+            (viewMentorData)="viewMentorData($event)"
+            (closeForm)="isMentorForm = false"
+          ></app-account-mentor>
+        </div>
+        
+        <div class="mentee" *ngSwitchCase="auth.isMentee">
+          <app-account-mentee></app-account-mentee>
+        </div>
+      </div>
+    </div> 
+  </div>
+</div>

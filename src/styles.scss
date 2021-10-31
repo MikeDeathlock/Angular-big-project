@@ -1,0 +1,112 @@
+/* You can add global styles to this file, and also import other style files */
+//@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+@import 'material-icons/iconfont/material-icons.scss';
+@import "~@ng-select/ng-select/themes/material.theme.css";
+@import "~bootswatch/dist/minty/variables";
+@import "~bootswatch/dist/minty/bootstrap.min.css";
+@import "variables";
+@import "reset";
+
+body {
+  background-color: $bg;
+  // min-width: 1140px;
+  width: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  ::-webkit-scrollbar {
+    background-color: #dedede;
+    width: 10px;
+    // border-radius: 20px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(58, 182, 125, 0.8);
+    border-radius: 20px;
+  }
+}
+
+.pagination {
+  list-style-type: none;
+  display: flex;
+
+  li {
+    cursor: pointer;
+    margin-right: 3px;
+  }
+}
+
+input::placeholder{
+  @include placeholder-style;
+}
+
+input::-webkit-input-placeholder{
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+input::-moz-placeholder{
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+input:-moz-placeholder{
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+input:-ms-input-placeholder{
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+input:focus::-webkit-input-placeholder{
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+input:focus::-moz-placeholder{
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+input:focus:-moz-placeholder{
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+input:focus:-ms-input-placeholder{
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+app-moderator-users-list {
+  width: 70%;
+  box-sizing: border-box;
+  padding-right: 10px;
+}
+
+app-moderator-black-list {
+  width: 70%;
+  box-sizing: border-box;
+  padding-right: 10px;
+}
+
+app-moderator-chats {
+  width: 70%;
+  box-sizing: border-box;
+  padding-right: 10px;
+}
+
+app-moderator-edit {
+  width: 70%;
+  box-sizing: border-box;
+  padding-right: 10px;
+}
+app-users {
+  width: 80%;
+  box-sizing: border-box;
+  padding: 50px;
+}
+

@@ -1,0 +1,80 @@
+@import "variables";
+@import "reset";
+
+.box_contact{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    h1{
+        font-size: 4em;
+        font-weight: 300;
+        font-stretch: extra-expanded;
+        margin: 0;
+        padding-top: 40px;
+        font-family: 'Roboto', sans-serif;
+        line-height: 44px;
+        color: $darkblue;
+        @media screen and (max-width: 576px) {
+            padding-top: 10px;
+            font-size: 2em;
+          }
+    }
+    .box_inside{
+        display: flex;
+        justify-content: space-between;
+        background-color: transparent;
+        padding-top: 60px;
+        @media screen and (max-width: 576px) {
+            padding-top: 10px;
+          }
+        @media screen and (max-width: 760px) {
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+          }
+        .boxes{
+            @media screen and (max-width: 760px) {
+                width: 70%;
+                margin: 10px 0;
+              }
+            @media screen and (max-width: 576px) {
+                width: 90%;
+              }
+            width: 30%;
+            background-color: $lightgray;
+            margin: 0;
+            padding: 20px 0px;
+            .inside{
+            width: 100%;
+            height: 120px;
+            
+            .my_circle{
+                margin: auto;
+                height: 75px;
+                width: 75px;
+                background-color: $fuschia40;
+                border-radius: 50%;
+                display: flex;
+                    justify-content: center;
+                    align-items: center;
+                h4{
+                    font-size: 2em;
+                    color: $darkblue;
+                }
+            } 
+            .my_circle:hover{
+                h4{
+                    font-size: 2.3em;  
+                }
+                background-color: $fuschia40;
+            }  
+        }
+            h5{
+                font-size: 1.5em;
+                font-weight: 200;
+                margin: 0;
+            }
+            
+        } 
+    }
+}

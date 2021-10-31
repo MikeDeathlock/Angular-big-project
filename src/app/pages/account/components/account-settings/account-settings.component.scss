@@ -1,0 +1,107 @@
+@import "variables";
+@import "reset";
+
+.wrapper{
+  margin-bottom: 100px;
+}
+.title {
+  padding-top: 100px;
+
+  .mainsection{
+    margin: 0px auto!important;
+    .aside{
+      width: 200px;
+    }
+    .aside,.content{
+      background-color: white;
+      @include border;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    .aside>ul>li>{
+      margin: 40px;
+
+      span{
+        cursor: pointer;
+        display: flex;
+        padding: 20px 5px 15px 5px;
+        border-bottom: 1px solid #c6c6c6;
+        i{
+          font-size: 20px;
+        }
+
+        p{
+          font-size: 16px;
+          margin-left: 5px;
+          padding: 4px;
+        }
+      }
+      span.option{
+        color: $darkgrey;
+      }
+      span.option:hover{
+        color: $black;
+      }
+
+      .delete{
+        color: $red;
+      }
+
+      .delete:hover{
+        color: #ff1616;
+      }
+
+    }
+  }
+}
+
+.title > p {
+  margin-bottom: 20px;
+  font-size: 25px;
+  color: black;
+  font-family: Roboto, sans-serif;
+  letter-spacing: 1px;
+
+}
+
+button{
+  background-color:$fuschia100;
+  color: $lightgreen;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+
+}
+
+button:active{
+  background: $fuschia80;
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+}
+
+button:hover{
+  @include btn-shadow;
+  transform: scale(1.1, 1.1);
+}
+
+.selected{
+  color:black;
+}
+
+
+.prog10{
+  width: 10%;
+}
+
+.prog50{
+  width: 50%;
+}
+
+.prog100{
+  width: 100%;
+}
+
+.mss{
+  box-shadow: 1px 1px 5px 2px #dedede!important;
+  padding: 30px;
+}

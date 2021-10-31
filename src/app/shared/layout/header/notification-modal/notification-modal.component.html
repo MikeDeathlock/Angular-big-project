@@ -1,0 +1,28 @@
+<ng-container *ngIf="display$ | async as display">
+  <div class="container">
+    <section [class.open]="display === 'open'" (click)="close()">
+
+      <div (click)="$event.stopPropagation()">
+        <button class="close" type="button" (click)="close()">X</button>
+        <h1 class="mentorship-request__title">Requesting mentorship</h1>
+        <hr>
+        <ng-container *ngIf="modalService.isNewNotification$ | async; else NoNotification">
+          <div class="mentorship-request__users">
+
+            <ng-container *ngIf="auth.isMentor">
+              <app-mentorship-request *ngFor="let mentee of mentees$ | async" [mentee]="mentee"
+                (approveIgnoreRequest)="approveIgnoreRequest($event)"></app-mentorship-request>
+            </ng-container>
+            <ng-container *ngIf="auth.isMentee">
+              <app-mentorship-approve *ngFor="let mentor of mentors$ | async" [mentorCooperation]="mentor" (deleteNotificationRequest)="deleteNotificationRequest($event)"></app-mentorship-approve>
+            </ng-container>
+
+          </div>
+        </ng-container>
+        <ng-template #NoNotification>
+          <h2 class="no-request">No new notifications</h2>
+        </ng-template>
+      </div>
+    </section>
+  </div>
+</ng-container>

@@ -1,0 +1,168 @@
+@import "variables";
+
+%numbersForSteps {
+    font-size: 144px;
+    font-weight: bold;
+    color: $fuschia100;
+    margin: auto;
+    text-align: center;
+}
+%for3headers{
+    color: black;
+    padding-bottom: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+}
+.container{
+    background-color: white;
+    padding: 50px 30px;
+    line-height: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    @media screen and (max-width: 768px) {
+        padding: 30px 0;
+      }
+    h1, h2{
+        @include title;
+        text-align: center;
+        color: $fuschia100;
+        margin-bottom: 20px;
+    }
+    .card{
+        border: none;
+        background-color: transparent;
+        img{
+            width: 50%;
+            margin: auto;
+        }
+        .card-body {
+            .card-title {
+                color: $fuschia100;
+                font-weight: 700;
+                padding-top: 20px;
+                font-size: 26px;
+                font-family: 'Roboto', sans-serif;
+            }
+            .card-text {
+                color: black;
+                padding: 20px 0;
+            }
+        }
+    }
+    .threeColumnsStep {
+        padding: 40px 0;
+        @media screen and (max-width: 576px) {
+            padding: 20px 0;
+          }
+        .numberOfStep{
+            @extend %numbersForSteps;
+            @media screen and (max-width: 768px) {
+                display: none;
+              }
+        }
+        .contentOfStep{
+            text-align: center;
+            h3{
+               @extend %for3headers;
+               span{
+                   display: none;
+                   @media screen and (max-width: 768px) {
+                    display: inline-block;
+                    color: $fuschia100;
+                    font-size: 1.5rem;
+                  }
+               }
+            }
+        }
+            .hiddenAtBeginning{
+                display: none;
+                    @media screen and (max-width: 768px) {
+                        display: block;
+                    }
+                }
+            .hiddenInEnd{
+                display: block;
+                @media screen and (max-width: 768px) {
+                    display: none;
+                }
+            }
+    }
+    .secondStep {
+        padding: 30px 0;
+        @media screen and (max-width: 576px) {
+            padding: 20px 0;
+          }
+        .numberOfStep{
+            @extend %numbersForSteps;
+            @media screen and (max-width: 768px) {
+                display: none;
+              }
+        }
+        .col-md-10 {
+            text-align: center;
+            h3{
+               @extend %for3headers;
+               span{
+                display: none;
+                @media screen and (max-width: 768px) {
+                 display: inline-block;
+                 color: $fuschia100;
+                 font-size: 1.5rem;
+               }
+            }
+            }
+            p {
+                padding-bottom: 10px;
+            } 
+        }
+    }
+    .fifthStep{
+        .col-md-12{
+            p{
+                font-size: 144px;
+                display: block;
+            }
+            img {
+                height: 144px;
+            }
+        }
+    }
+    .lastStep{
+        .hiddenLater{
+            display: block;
+            @media screen and (max-width: 768px) {
+                display: none;
+              }
+        }
+    }
+    .blockWithBtn {
+        button {
+            width: fit-content;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: $fuschia100;
+            color: #FFF;
+            text-decoration: none;
+            cursor: pointer;
+            display: block;
+            margin: auto;
+            border: none;
+            &:hover{
+                @include btn-shadow;
+                transform: scale(1.1, 1.1);
+            }
+            @media screen and (max-width: 576px) {
+                padding: 10px;
+                border-radius: 10px;
+              }
+        }
+        .btnMentor{
+            background-color:white;
+            color: $fuschia100;
+            border: 1px solid  $fuschia100;
+            @media screen and (max-width: 576px) {
+                margin-top: 10px;
+              }
+        }
+    }
+}

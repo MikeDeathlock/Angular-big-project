@@ -1,0 +1,92 @@
+<div class="main-section container">
+  <div class="row">
+    <div class="col-5 col-lg-4">
+      <div class="image-wrap">
+        <img class="image" src="{{mentor.localAvatar || mentor.avatar}}" alt="{{mentor.firstName}}">
+      </div>
+
+      <h3 class="name" #name>
+        {{mentor.firstName}} {{mentor.lastName}}
+      </h3>
+
+      <div class="soc-link" *ngIf="auth">
+        <mat-icon class="d-flex justify-content-start">
+          <a href="#" class="material-icons-outlined">telegram</a>
+          <a href="#" class="material-icons-outlined">mail_outline</a>
+          <a href="#" class="material-icons">phone_in_talk</a>
+        </mat-icon>
+      </div>
+
+      <button class="btn">{{button}}</button>
+    </div>
+
+    <div class="col-7 col-lg-4">
+      <div class="d-flex flex-column justify-content-around h-100">
+        <div class="d-flex">
+          <b>Category: </b>
+          <div class="category-list">
+            <div *ngFor="let category of mentor.categoriesList">
+              <div class="category-rate">
+                <span class="category">
+                  {{category}}
+                </span>
+              </div>
+          </div>
+        </div>
+
+        </div>
+        <br>
+        <div class="info-section d-flex align-items-start flex-column">
+          <p><b>Rate:</b>
+            <span class="rate"> {{mentor.rate}} <small>{{mentor.currency}}</small></span>
+          </p>
+          <p><b>Place:</b>
+            <span class="place" *ngFor="let city of mentor.cities last as isLast"> 
+              {{city}}<span *ngIf="!isLast">, </span>
+            </span></p>
+          <!-- <p><b>Rate:</b><span class="rate"> {{mentor.rate}} <small>{{mentor.currency}}</small></span></p> -->
+          <p><b>Group mentoring:</b>
+            <span class="grp_ment"> {{mentor.groupServ}}</span>
+          </p>
+          <p><b>Languages:</b>
+            <span class="language" *ngFor="let language of mentor.languages last as isLast">
+              {{language}}<span *ngIf="!isLast">, </span>
+            </span>
+          </p>
+        </div>
+
+        <div class="link">
+          <a href="{{mentor.skype}}" target="_blank" *ngIf="mentor.skype">
+            <i class="fab fa-skype"></i>
+          </a>
+          <a href="{{mentor.linkedIn}}" target="_blank" *ngIf="mentor.linkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="{{mentor.telegram}}" target="_blank" *ngIf="mentor.telegram">
+            <i class="fab fa-telegram"></i>
+          </a>
+          <a href="{{mentor.gitHub}}" target="_blank" *ngIf="mentor.gitHub">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-lg-4 description">
+      <br>
+      <p>{{mentor.description}}</p>
+      <br>
+    </div>
+  </div>
+</div>
+
+<div class="certificatesLinks container d-flex flex-column align-items-center">
+  <div class="certificates">
+    <h3>Certificates:</h3>
+    <p *ngFor="let certificate of mentor.certificates">
+      <a class="cartificateLink" href="{{certificate.link}}" target="_blank">
+        {{certificate.name}}
+      </a>
+    </p>
+  </div>
+</div>

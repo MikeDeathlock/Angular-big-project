@@ -1,0 +1,313 @@
+@import "variables";
+
+.container {
+  padding: 0;
+}
+
+.content {
+  padding: 30px 20px;
+  background: $white;
+  color: $black;
+  @media screen and (max-width: 768px) {
+    padding: 20px 20px;
+  }
+  @media screen and (max-width: 576px) {
+    padding: 20px 5px;
+  }
+}
+
+::ng-deep .thumb {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  cursor: default !important;
+  img {
+    border-radius: 100%;
+  }
+}
+
+.mentor-account {
+  &__top-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+  }
+
+  &__title {
+    color: #141f31;
+    font-size: 36px;
+    font-weight: regular;
+    margin-bottom: 0;
+  }
+
+  &__top-actions {
+    display: flex;
+    align-items: center;
+  }
+
+  &__slide {
+    color: $fuschia100;
+    margin-right: 70px;
+  }
+
+  &__btn {
+    display: block;
+    margin-top: 30px;
+    margin: 0 auto;
+    width: 335px;
+    border-radius: 15px;
+    padding: 15px 5px;
+    border-color: $black;
+    background-color: $white;
+    color: $fuschia100;
+    border: 1px solid $fuschia100;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      background-color: $fuschia100;
+      color: $white;
+    }
+  }
+
+  &__avatar-upload {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $white;
+    box-shadow: 1px 1px 5px 2px $lightgray;
+    padding: 20px 100px;
+    margin-bottom: 50px;
+    @media screen and (max-width: 992px) {
+      padding: 20px 20px;
+    }
+    @media screen and (max-width: 576px) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__avatar-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__avatar-section {
+    height: 120px;
+    width: 120px;
+    cursor: default;
+    user-select: none;
+    margin-right: 10px;
+  }
+
+  &__submit-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    .edit-small-btn{
+      width: 35px;
+      height: 35px;
+      border: 1px solid $fuschia100;
+      background-color: white;
+      border-radius: 50%;
+      padding-top: 7px;
+      transition: 0.3s ease-in-out;
+      &:hover {
+      
+      background-color: $fuschia100;
+      color: white;
+      }
+      span{
+        font-size: 20px;
+        color: black;
+        margin-top: 0;
+        padding-top: 0;
+      }
+      &.upper {
+        margin-top: 5;
+      }
+      &.lower {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  &__upload-section {
+    display: flex;
+    align-items: center;
+    input {
+      display: none;
+    }
+    p.infoBlock {
+        font-size: 1.6rem;
+        color: $darkblue;
+    }
+  }
+  
+
+  &__cropper-inside{
+    text-align: center;
+    max-width: 35vw; 
+    button{
+      background-color: whitesmoke;
+      padding: 15px;
+      border: 1px solid $fuschia100;
+      border-radius: 15px;
+      color:black;
+      margin-top: 10px;
+      transition: 0.3s ease-in-out;
+    }
+    button:hover{
+      background-color: $fuschia100;
+      color: white;
+    }
+  }
+}
+
+#output {
+  // width: 70px;
+  background: $white;
+  width: 120px;
+}
+
+.mentee {
+  text-align: center;
+  padding: 50px;
+  background: $white;
+  box-shadow: 1px 1px 5px 2px $lightgray;
+}
+
+.edit-btn {
+  display: block;
+  margin: 15px auto 0;
+  width: 335px;
+  border-radius: 15px;
+  padding: 15px 5px;
+  border-color: $black;
+  background-color: $white;
+  color: $fuschia100;
+  border: 1px solid $fuschia100;
+  transition: 0.3s ease-in-out;
+  
+  &:hover {
+    color: $white;
+    background-color: $fuschia100;
+  }
+}
+
+::ng-deep {
+  .mat-slide-toggle.mat-checked {
+    .mat-slide-toggle-thumb {
+      background: $fuschia100;
+    }
+
+    .mat-ripple-element {
+      background: $fuschia100;
+    }
+
+    .mat-slide-toggle-bar {
+      background: $lightgray;
+    }
+  }
+
+  .mat-slide-toggle-content {
+    margin: 3px 15px 0 0;
+  }
+
+  .mat-progress-spinner {
+    margin: auto;
+
+    circle {
+      stroke: $fuschia60;
+    }
+  } 
+}
+
+.upload-btn {
+  width: 70px;
+  height: 40px;
+  border: 1px solid $fuschia100;
+  background-color: white;
+  border-radius: 10px;
+  transition: 0.3s ease-in-out;
+  font-weight: 400;
+  font-size: 1.1rem;
+  &:hover {
+    background-color: $fuschia100;
+    color: white;
+  }
+  &:disabled {
+    background-color: $lightgray;
+    color: gray;
+  }
+}
+
+::ng-deep .mat-icon {
+  &:hover {
+    color: white;
+  }
+}
+
+@media screen and (max-width: 1140px) {
+  .mentor-account {
+    &__slide {
+      margin-right: 30px;
+    }
+
+    &__upload-photo {
+      padding: 20px 50px;
+    }
+
+    &__fild-upload {
+      width: 255px;
+    }
+
+    &__avatar-upload {
+      padding: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .mentor-account {
+    &__top-actions {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    &__slide {
+      margin-bottom: 20px;
+    }
+
+    &__upload-section {
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    &__fild-upload {
+      margin-bottom: 10px;
+    }
+
+    &__upload-photo {
+      padding: 20px 35px;
+    }
+
+    // .infoBlock {
+      // display: none;
+    // }
+  }
+}
+
+::ng-deep .mat-simple-snackbar {
+  color: white !important;
+}
+::ng-deep snack-bar-container{
+  background-color: $red !important;
+}
+::ng-deep snack-bar-container.danger{
+  background-color: $red;
+  .mat-simple-snackbar-action{
+    button {
+      color: black;
+    }
+  }
+}
